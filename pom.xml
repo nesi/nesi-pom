@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nz.org.nesi</groupId>
 	<artifactId>nesi</artifactId>
@@ -38,6 +39,25 @@
 		</repository>
 	</repositories>
 
+	<pluginRepositories>
+		<pluginRepository>
+			<id>bestgrid plugin</id>
+			<url>http://code.ceres.auckland.ac.nz/nexus/content/groups/public/</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>bestgrid plugin Snapshots</id>
+			<url>http://code.ceres.auckland.ac.nz/nexus/content/groups/public-snapshots/</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<distributionManagement>
 		<repository>
 			<name>BeSTGRID Releases Repository</name>
@@ -62,24 +82,70 @@
 		<url>https://nesi.org.nz</url>
 	</organization>
 
-<build>
-<plugins>
-	<plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-release-plugin</artifactId>
-		<version>2.2.2</version>
-		<configuration>
-			<autoVersionSubmodules>true</autoVersionSubmodules>
-			<pushChanges>true</pushChanges>
-			<localCheckout>true</localCheckout>
-			<tagNameFormat>@{project.version}</tagNameFormat>
-			<releaseProfiles>deb,rpm</releaseProfiles>
-		</configuration>
-	</plugin>
-</plugins>
-</build>
+	<build>
+		<plugins>
+		
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.2.2</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<pushChanges>true</pushChanges>
+					<localCheckout>true</localCheckout>
+					<tagNameFormat>@{project.version}</tagNameFormat>
+					<releaseProfiles>man,deb,rpm</releaseProfiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<profiles>
+			<profile>
+			<id>sign</id>
+<!-- 			<activation> -->
+<!-- 				<property> -->
+<!-- 					<name>BUILD_NUMBER</name> -->
+<!-- 				</property> -->
+<!-- 			</activation> -->
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jarsigner-plugin</artifactId>
+						<version>1.2</version>
+						<executions>
+							<execution>
+								<id>sign</id>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<alias>grisu</alias>
+							<storepass>FxAKs3p6</storepass>
+							<keypass>FxAKs3p6</keypass>
+						</configuration>
+					</plugin>
+
+
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	
 	<properties>
-		<grisu.version.current>0.4-rc16</grisu.version.current>
-		<grid-jcommons.version.current>1.5.8</grid-jcommons.version.current>
+		<grisu.version>0.4-rc16</grisu.version>
+		<grid-jcommons.version>1.5.8</grid-jcommons.version>
 	</properties>
 </project>
