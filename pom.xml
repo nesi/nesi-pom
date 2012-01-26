@@ -53,8 +53,8 @@
 	</distributionManagement>
 
 	<scm>
-		<connection>scm:git:git://github.com/grisu/grisu.git</connection>
-		<developerConnection>scm:git:git@github.com:grisu/grisu.git</developerConnection>
+		<connection>scm:git:git://github.com/nesi/nesi-pom.git</connection>
+		<developerConnection>scm:git:git@github.com:nesi/nesi-pom.git</developerConnection>
 		<url>https://github.com/grisu/grisu</url>
 	</scm>
 
@@ -79,4 +79,8 @@
 	</plugin>
 </plugins>
 </build>
+	<properties>
+		<grisu.version.current>0.4-rc15</grisu.version.current>
+		<grid-jcommons.version.current>1.5.8</grid-jcommons.version.current>
+	</properties>
 </project>
