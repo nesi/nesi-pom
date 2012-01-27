@@ -4,7 +4,7 @@
   <parent>
         <artifactId>nesi</artifactId>
         <groupId>nz.org.nesi</groupId>
-        <version>0.5-SNAPSHOT</version>
+        <version>0.5</version>
     </parent>
   <artifactId>client</artifactId>
   <packaging>pom</packaging>
