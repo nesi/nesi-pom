@@ -144,7 +144,10 @@
 	</profiles>
 	
 	<properties>
-		<grisu.version>0.4-rc16</grisu.version>
+		<grisu.version>0.4-rc17</grisu.version>
 		<grid-jcommons.version>1.5.8</grid-jcommons.version>
 	</properties>
+	<modules>
+		<module>client</module>
+	</modules>
 </project>
