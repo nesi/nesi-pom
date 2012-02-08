@@ -144,7 +144,7 @@
 	</profiles>
 	
 	<properties>
-		<grisu.version>0.4-rc17</grisu.version>
+		<grisu.version>0.4-rc19</grisu.version>
 		<grid-jcommons.version>1.5.9</grid-jcommons.version>
 	</properties>
 </project>
