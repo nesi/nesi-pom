@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nz.org.nesi</groupId>
 	<artifactId>nesi</artifactId>
@@ -105,6 +106,14 @@
 					<releaseProfiles>man,deb,rpm</releaseProfiles>
 				</configuration>
 			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>meta-packages</id>
+			<build>
+				<plugins>
 					<plugin>
 						<artifactId>maven-resources-plugin</artifactId>
 						<version>2.5</version>
@@ -154,54 +163,54 @@
 								</replacement>
 							</replacements>
 						</configuration>
-					</plugin>			
+					</plugin>
 
-			<plugin>
-				<artifactId>jdeb</artifactId>
-				<groupId>org.vafer</groupId>
-				<version>0.9</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>jdeb</goal>
-						</goals>
-						<configuration>
-							<changesIn>CHANGES.txt</changesIn>
-							<deb>[[buildDir]]/nesi-meta-${project.version}.deb</deb>
-							<controlDir>target/packaging/deb/control</controlDir>
-							<dataSet>
+					<plugin>
+						<artifactId>jdeb</artifactId>
+						<groupId>org.vafer</groupId>
+						<version>0.9</version>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>jdeb</goal>
+								</goals>
+								<configuration>
+									<changesIn>CHANGES.txt</changesIn>
+									<deb>[[buildDir]]/nesi-meta-${project.version}.deb</deb>
+									<controlDir>target/packaging/deb/control</controlDir>
+									<dataSet>
 
-								<data>
-									<src>${project.basedir}/packaging/deb/data/nesi-repo.key.dpkg-new</src>
-									<type>file</type>
-									<mapper>
-										<type>perm</type>
-										<prefix>/usr/share/keyrings/</prefix>
-										<user>root</user>
-										<group>root</group>
-										<filemode>755</filemode>
-									</mapper>
-								</data>
+										<data>
+											<src>${project.basedir}/packaging/deb/data/nesi-repo.key.dpkg-new</src>
+											<type>file</type>
+											<mapper>
+												<type>perm</type>
+												<prefix>/usr/share/keyrings/</prefix>
+												<user>root</user>
+												<group>root</group>
+												<filemode>755</filemode>
+											</mapper>
+										</data>
 
-								<data>
-									<src>${project.basedir}/packaging/deb/data/nesi-repo.list.dpkg-new</src>
-									<type>file</type>
-									<mapper>
-										<type>perm</type>
-										<prefix>/etc/apt/sources.list.d/</prefix>
-										<user>root</user>
-										<group>root</group>
-										<filemode>755</filemode>
-									</mapper>
-								</data>
+										<data>
+											<src>${project.basedir}/packaging/deb/data/nesi-repo.list.dpkg-new</src>
+											<type>file</type>
+											<mapper>
+												<type>perm</type>
+												<prefix>/etc/apt/sources.list.d/</prefix>
+												<user>root</user>
+												<group>root</group>
+												<filemode>755</filemode>
+											</mapper>
+										</data>
 
-							</dataSet>
+									</dataSet>
 
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>rpm-maven-plugin</artifactId>
@@ -219,7 +228,7 @@
 							<group>Application/Other</group>
 							<!-- <icon>src/main/resources/icon.gif</icon> -->
 							<packager>Markus Binsteiner</packager>
-<!-- 							<prefix>/usr/local</prefix> -->
+							<!-- <prefix>/usr/local</prefix> -->
 							<version>${project.version}</version>
 							<!-- <changelogFile>src/changelog</changelogFile> -->
 							<!-- <defineStatements> -->
@@ -250,10 +259,11 @@
 						</configuration>
 					</plugin>
 
-		</plugins>
-	</build>
+				</plugins>
+			</build>
+		</profile>
 
-	<profiles>
+
 		<profile>
 			<id>sign</id>
 			<!-- <activation> -->
