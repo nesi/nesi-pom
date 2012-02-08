@@ -102,7 +102,7 @@
 					<pushChanges>true</pushChanges>
 					<localCheckout>true</localCheckout>
 					<tagNameFormat>@{project.version}</tagNameFormat>
-					<releaseProfiles>sign,man,deb,rpm</releaseProfiles>
+					<releaseProfiles>man,deb,rpm</releaseProfiles>
 				</configuration>
 			</plugin>
 		</plugins>
