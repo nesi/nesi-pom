@@ -1,0 +1,8 @@
+Package: nesi-meta
+Version: VERSION_TOKEN
+Section: misc
+Priority: optional
+Architecture: all
+Depends: 
+Maintainer: Markus Binsteiner <m.binsteiner@auckland.ac.nz>
+Description: NeSI meta package to install repo key & list
