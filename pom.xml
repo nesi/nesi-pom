@@ -298,7 +298,9 @@
 	</profiles>
 
 	<properties>
-		<grisu.version>0.4</grisu.version>
-		<grid-jcommons.version>1.5.11</grid-jcommons.version>
+		<grisu.version>0.5-SNAPSHOT</grisu.version>
+		<grid-jcommons.version>2.0-SNAPSHOT</grid-jcommons.version>
+		<groovy.version>1.8.0</groovy.version>
+		<bcprov.version>1.45</bcprov.version>
 	</properties>
 </project>
