@@ -303,5 +303,6 @@
 		<grid-jcommons.version>2.0-SNAPSHOT</grid-jcommons.version>
 		<groovy.version>1.8.6</groovy.version>
 		<bcprov.version>1.45</bcprov.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 </project>
