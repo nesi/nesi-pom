@@ -198,7 +198,7 @@
 											<type>file</type>
 											<mapper>
 												<type>perm</type>
-												<prefix>/usr/local/lib/grisu/</prefix>
+												<prefix>/usr/local/lib/nesi/</prefix>
 												<user>root</user>
 												<group>root</group>
 												<filemode>755</filemode>
@@ -311,8 +311,8 @@
 	</profiles>
 
 	<properties>
-		<grisu.version>0.5-SNAPSHOT</grisu.version>
-		<grid-jcommons.version>2.0-SNAPSHOT</grid-jcommons.version>
+		<grisu.version>0.5-rc1</grisu.version>
+		<grid-jcommons.version>2.0</grid-jcommons.version>
 		<groovy.version>1.8.6</groovy.version>
 		<bcprov.version>1.45</bcprov.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
