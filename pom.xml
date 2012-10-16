@@ -313,7 +313,7 @@
 	</profiles>
 
 	<properties>
-		<grisu.version>0.5</grisu.version>
+		<grisu.version>0.5.6</grisu.version>
 		<grid-jcommons.version>2.0.3</grid-jcommons.version>
 		<groovy.version>2.0.2</groovy.version>
 		<bcprov.version>1.45</bcprov.version>
