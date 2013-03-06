@@ -97,14 +97,14 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.2.2</version>
+				<version>2.4</version>
 				<inherited>false</inherited>
 				<configuration>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<pushChanges>true</pushChanges>
 					<localCheckout>true</localCheckout>
 					<tagNameFormat>@{project.version}</tagNameFormat>
-					<releaseProfiles>man,deb,rpm,meta-packages</releaseProfiles>
+					<releaseProfiles>man,deb,rpm,meta-packages,exe-war</releaseProfiles>
 				</configuration>
 			</plugin>
 		</plugins>
