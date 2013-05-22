@@ -105,7 +105,6 @@
 					<pushChanges>true</pushChanges>
 					<localCheckout>true</localCheckout>
 					<tagNameFormat>@{project.version}</tagNameFormat>
-					<releaseProfiles>man,deb,rpm,meta-packages,exe-war</releaseProfiles>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -314,8 +313,8 @@
 	</profiles>
 
 	<properties>
-		<grisu.version>0.6</grisu.version>
-		<grid-jcommons.version>2.5</grid-jcommons.version>
+		<grisu.version>0.6.4</grisu.version>
+		<grid-jcommons.version>2.7</grid-jcommons.version>
 		<groovy.version>2.0.6</groovy.version>
 		<bcprov.version>1.45</bcprov.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
