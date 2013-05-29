@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nz.org.nesi</groupId>
 	<artifactId>nesi</artifactId>
-	<version>1.0</version>
+	<version>1.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>nesi</name>
 
@@ -74,7 +74,7 @@
 		<connection>scm:git:git://github.com/nesi/nesi-pom.git</connection>
 		<developerConnection>scm:git:git@github.com:nesi/nesi-pom.git</developerConnection>
 		<url>https://github.com/grisu/grisu</url>
-	  <tag>1.0</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<organization>
